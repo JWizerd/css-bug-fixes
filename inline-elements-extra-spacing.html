@@ -1,0 +1,55 @@
+<!-- =======================
+
+CSS INLINE ELEMENTS BUG FIX: 
+
+When styling inline elements there is extra 'uneditable' space between elements making it look ugly when you have something like a background 
+element who on hover, active, visited etc. has a different background color. 
+
+There a few ways to fix this. 
+
+1. minify html so that the white space in the document is removed
+2. add comments that connect both the previous closing tag and the opening tag of the next element
+3. remove the closing tags for the inline elments. Your HTML will still work perfectly. HTML DON"T CARE NONE!
+
+ ======================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <!-- note there are no closing brackets for the list items. This method is the cleanest way to fix this error that I have found. -->
+    <li><a href="">hello</a>
+    <li><a href="">hello</a>
+    <li><a href="">hello</a>
+    <li><a href="">hello</a>
+    <li><a href="">hello</a>
+    <li><a href="">hello</a>
+    <li><a href="">hello</a>
+    <li><a href="">hello</a>
+    <li><a href="">hello</a>
+    <li><a href="">hello</a>
+  </ul>
+</body>
+
+<style>
+  li {
+    border-right: 1px solid black;
+    display: inline-block;
+    padding: 15px 45px;
+  }
+
+  li a {
+    transition: ease all .3s;
+    width: 100%;
+    height: 100%;
+  }
+
+  li:hover {
+    background: blue;
+  }
+</style>
+</html>
